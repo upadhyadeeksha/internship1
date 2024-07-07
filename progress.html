@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Language Learning Progress Tracker</title>
+  <style>
+    
+    .progress-container {
+    
+      width: 300px;
+      height: 20px;
+      background-color: #ecf0f3;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background-color: #0d0f0d;
+      border-radius: 10px;
+    }
+    
+    .progress-percentage {
+      font-size: 14px;
+      color: #000;
+      margin-top: 5px;
+    }
+    #progress-bar{
+      width: 1%;
+  
+  background-color: #04AA6D;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Language Learning Progress Tracker</h1>
+  <div id="progress-bar"></div>
+  
+
+  <h3>English </h3>
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 75%;"></div>
+  </div>
+  <div class="progress-percentage">75%</div>
+
+  <h3>French</h3>
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 50%;"></div>
+  </div>
+  <div class="progress-percentage">50%</div>
+
+  <h3>Spanish</h3>
+  <div class="progress-container">
+    <div class="progress-bar" style="width: 90%;"></div>
+  </div>
+  <div class="progress-percentage">90%</div>
+
+  <script>
+    var i = 0;
+    function move() {
+      if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("progress-bar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 50) {
+            clearInterval(id);
+            i = 0;
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    }
+    </script>
+</body>
+</html>
